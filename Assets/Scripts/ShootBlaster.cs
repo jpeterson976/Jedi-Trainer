@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ShootBlaster : MonoBehaviour
 {
-    public GameObject player;
     public GameObject blasterBolt;
 
+    private GameObject player;
     private int counter = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class ShootBlaster : MonoBehaviour
 
         counter++;
 
-        if (counter > 100)
+        if (counter == 100)
         {
             GameObject.Instantiate(blasterBolt, this.transform.position, this.transform.rotation);
             this.gameObject.GetComponent<AudioSource>().Play();
