@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8966203920417855908}
   - component: {fileID: 6105040141659316462}
   - component: {fileID: 7321955279933375610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 8367246960200362236}
   - component: {fileID: 8328518806818512519}
   - component: {fileID: 7811900436079421022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: b1-droid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

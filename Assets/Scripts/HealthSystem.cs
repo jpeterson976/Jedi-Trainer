@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int maxHealth;
-    private int currentHealth;
+    public int healRate;
+    public float maxHealth;
+    private float currentHealth;
 
     public HealthBar healthBar;
 
@@ -17,11 +18,11 @@ public class HealthSystem : MonoBehaviour
 
     public void Heal()
     {
-        currentHealth = maxHealth;
+        currentHealth += healRate * Time.deltaTime;
         healthBar.SetHealth(currentHealth);
     }
 
-    public void Damage(int dmg)
+    public void Damage(float dmg)
     {
         currentHealth -= dmg;
         healthBar.SetHealth(currentHealth);
@@ -38,10 +39,6 @@ public class HealthSystem : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Damage(10);
-        }
-        else if (Input.GetButtonDown("Horizontal"))
-        {
-            Heal();
         }
 
         if (isDead())
