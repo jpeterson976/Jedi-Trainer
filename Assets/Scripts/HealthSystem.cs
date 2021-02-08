@@ -6,7 +6,7 @@ public class HealthSystem : MonoBehaviour
 {
     public int healRate;
     public float maxHealth;
-    private float currentHealth;
+    public float currentHealth;
 
     public HealthBar healthBar;
 
@@ -18,6 +18,12 @@ public class HealthSystem : MonoBehaviour
 
     public void Heal()
     {
+        if (currentHealth >= maxHealth)
+        {
+            currentHealth = maxHealth;
+            return;
+        }
+
         currentHealth += healRate * Time.deltaTime;
         healthBar.SetHealth(currentHealth);
     }
