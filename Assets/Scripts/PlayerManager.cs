@@ -7,7 +7,9 @@ public class PlayerManager : MonoBehaviour
     public HealthSystem health;
     public SteamVR_TrackedController left;
     public SteamVR_TrackedController right;
+    public GameObject lightning;
 
+    public float lightningDamage;
     public int pushForce;
     public float pushCooldown;
     private float pushTimer;
@@ -23,7 +25,6 @@ public class PlayerManager : MonoBehaviour
         {
             pushTimer -= Time.deltaTime;
         }
-
         if (right.gripped)
         {
             health.Heal();
@@ -32,6 +33,16 @@ public class PlayerManager : MonoBehaviour
         {
             ForcePush();
             pushTimer = pushCooldown;
+        }
+
+
+        if (left.triggerPressed)
+        {
+            lightning.SetActive(true);
+        }
+        else
+        {
+            lightning.SetActive(false);
         }
     }
 

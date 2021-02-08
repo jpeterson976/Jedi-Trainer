@@ -13,7 +13,8 @@ public class HealthSystem : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetHealth(maxHealth);
+        if (healthBar != null)
+            healthBar.SetHealth(maxHealth);
     }
 
     public void Heal()
@@ -25,13 +26,15 @@ public class HealthSystem : MonoBehaviour
         }
 
         currentHealth += healRate * Time.deltaTime;
-        healthBar.SetHealth(currentHealth);
+        if (healthBar != null)
+            healthBar.SetHealth(currentHealth);
     }
 
     public void Damage(float dmg)
     {
         currentHealth -= dmg;
-        healthBar.SetHealth(currentHealth);
+        if (healthBar != null)
+            healthBar.SetHealth(currentHealth);
     }
 
     public bool isDead()
@@ -49,7 +52,7 @@ public class HealthSystem : MonoBehaviour
 
         if (isDead())
         {
-            Debug.Log("You Died");
+            gameObject.SetActive(false);
         }
     }
 }
