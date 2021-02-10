@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/main menu.unity
+    guid: 36c96f88e4e5fb04289e9b908835cf11
+  - enabled: 1
+    path: Assets/Scenes/trainer.unity
+    guid: 236683fee4505e946a7ac9ac1ceab96a
+  - enabled: 1
+    path: Assets/Scenes/droid waves.unity
+    guid: 5cd08afe83abab44db31cf61d3420bbf
   m_configObjects: {}
