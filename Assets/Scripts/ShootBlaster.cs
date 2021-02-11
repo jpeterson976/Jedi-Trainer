@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootBlaster : MonoBehaviour
 {
     public GameObject blasterBolt;
+    public int fireRate = 100;
 
     private GameObject player;
     private int counter = 0;
@@ -13,7 +14,7 @@ public class ShootBlaster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class ShootBlaster : MonoBehaviour
 
         counter++;
 
-        if (counter == 100)
+        if (counter == fireRate)
         {
             GameObject.Instantiate(blasterBolt, this.transform.position, this.transform.rotation);
             this.gameObject.GetComponent<AudioSource>().Play();

@@ -50,9 +50,11 @@ public class HealthSystem : MonoBehaviour
             Damage(10);
         }
 
-        if (isDead())
-        {
-            gameObject.SetActive(false);
-        }
+        // leaving this until testing is done - does fade out and disable work? 
+        //
+        // if (isDead())
+        // {
+        //     gameObject.SetActive(false);
+        // }
     }
 }
