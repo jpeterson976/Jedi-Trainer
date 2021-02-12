@@ -9,7 +9,7 @@ public class BlasterBolt : MonoBehaviour
 
     void FixedUpdate()
     {
-        this.gameObject.transform.position += transform.forward * 25.0f * Time.smoothDeltaTime;
+        transform.position = transform.position + (transform.forward * 25.0f * Time.smoothDeltaTime);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -31,7 +31,7 @@ public class BlasterBolt : MonoBehaviour
             this.gameObject.GetComponent<AudioSource>().Play();
 
             // change the direction of the bolt
-            this.gameObject.transform *= -1;
+            transform.Rotate(0, 180.0f, 0);
         }
     }
 }

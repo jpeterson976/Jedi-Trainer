@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Droid
   - Throwable
+  - beam
   layers:
   - Default
   - TransparentFX

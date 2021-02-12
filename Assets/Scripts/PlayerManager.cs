@@ -9,10 +9,11 @@ public class PlayerManager : MonoBehaviour
     public SteamVR_TrackedController right;
     public GameObject lightning;
 
-    public float lightningDamage;
     public int pushForce;
     public float pushCooldown;
     private float pushTimer;
+
+    public bool canSeeFuture;
 
     void Start()
     {
@@ -21,6 +22,8 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
+        canSeeFuture = right.padPressed;
+
         if (pushTimer > 0)
         {
             pushTimer -= Time.deltaTime;

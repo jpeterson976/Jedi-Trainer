@@ -26,7 +26,7 @@ public class ShootBlaster : MonoBehaviour
 
         if (counter == fireRate)
         {
-            GameObject.Instantiate(blasterBolt, this.transform.position, this.transform.rotation);
+            GameObject.Instantiate(blasterBolt, this.gameObject.transform.position, this.gameObject.transform.rotation);
             this.gameObject.GetComponent<AudioSource>().Play();
             counter = 0;
         }
