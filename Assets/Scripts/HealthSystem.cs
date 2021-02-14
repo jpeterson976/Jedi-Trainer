@@ -35,6 +35,12 @@ public class HealthSystem : MonoBehaviour
         currentHealth -= dmg;
         if (healthBar != null)
             healthBar.SetHealth(currentHealth);
+
+        if (gameObject.tag.Equals("Droid"))
+        {
+            ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
+            ps.Play();
+        }
     }
 
     public bool isDead()
