@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootBlaster : MonoBehaviour
 {
     public GameObject blasterBolt;
+    public GameObject phantomBolt;
     public int fireRate = 100;
 
     private GameObject player;
@@ -23,6 +24,12 @@ public class ShootBlaster : MonoBehaviour
         this.gameObject.transform.LookAt(player.transform);
 
         counter++;
+
+        if (player.GetComponent<PlayerManager>().canSeeFuture)
+        {
+            // phantom bolt
+            GameObject.Instantiate(phantomBolt, this.gameObject.transform.position, this.gameObject.transform.rotation);
+        }
 
         if (counter == fireRate)
         {

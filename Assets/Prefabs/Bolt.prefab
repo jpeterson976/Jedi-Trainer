@@ -109,6 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e22d44de0d6bb24e90e76f4c5ff2781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 20
+  deflectedSound: {fileID: 8300000, guid: e4427f5aec0d2b7489e064e81987b1b9, type: 3}
+  loseMenu: {fileID: 0}
 --- !u!82 &1382370355431584245
 AudioSource:
   m_ObjectHideFlags: 0

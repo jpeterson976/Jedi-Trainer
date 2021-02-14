@@ -7,6 +7,7 @@ public class DroidTracker : MonoBehaviour
 
     public GameObject bossSpawnPoint;
     public GameObject boss;
+    public GameObject winMenu;
 
     public int numberSpawned = 0;
     public int numberKilled = 0;
@@ -36,6 +37,12 @@ public class DroidTracker : MonoBehaviour
                 // turn the flag on to stop multiple spawns
                 bossSpawned = true;
             }
+        }
+
+        // signifies the boss has been killed
+        if (numberKilled == target + 1)
+        {
+            winMenu.SetActive(true);
         }
     }
 

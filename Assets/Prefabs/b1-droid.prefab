@@ -4900,6 +4900,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blasterBolt: {fileID: 4434579490368268524, guid: ee2fad55b17da7e42b29ab2c075595d5,
     type: 3}
+  phantomBolt: {fileID: 8263239187808023533, guid: c92262e15fbcd32429501bdf9cec9c0a,
+    type: 3}
   fireRate: 150
 --- !u!82 &7811900436079421022
 AudioSource:
@@ -5042,6 +5044,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   healthBar: {fileID: 0}
+  loseMenu: {fileID: 0}
 --- !u!65 &8689460272773425999
 BoxCollider:
   m_ObjectHideFlags: 0

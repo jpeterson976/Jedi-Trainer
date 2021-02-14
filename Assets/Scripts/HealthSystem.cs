@@ -9,6 +9,7 @@ public class HealthSystem : MonoBehaviour
     public float currentHealth;
 
     public HealthBar healthBar;
+    public GameObject loseMenu;
 
     void Start()
     {
@@ -51,11 +52,11 @@ public class HealthSystem : MonoBehaviour
 
     void Update()
     {
-        // leaving this until testing is done - does fade out and disable work? 
-        //
-        // if (isDead())
-        // {
-        //     gameObject.SetActive(false);
-        // }
+        if (gameObject.tag.Equals("Player"))
+            if (isDead())
+            {
+                Time.timeScale = 0;
+                loseMenu.SetActive(true);
+            }
     }
 }
