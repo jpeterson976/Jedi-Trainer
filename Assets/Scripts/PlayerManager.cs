@@ -8,12 +8,15 @@ public class PlayerManager : MonoBehaviour
     public SteamVR_TrackedController left;
     public SteamVR_TrackedController right;
     public GameObject lightning;
+    public GameObject secondSaber;
+    public GameObject superForce;
 
     public int pushForce;
     public float pushCooldown;
     private float pushTimer;
 
     public bool canSeeFuture;
+    public bool unlimitedPower;
 
     void Start()
     {
@@ -22,6 +25,19 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
+        if (unlimitedPower)
+        {
+            GameObject[] droids = GameObject.FindGameObjectsWithTag("Droid");
+
+            foreach (GameObject droid in droids)
+            {
+                droid.GetComponent<HealthSystem>().Damage(5 * Time.deltaTime);
+            }
+
+            health.Damage(3 * Time.deltaTime);
+            return;
+        }
+
         canSeeFuture = right.padPressed;
 
         if (pushTimer > 0)
@@ -46,6 +62,17 @@ public class PlayerManager : MonoBehaviour
         else
         {
             lightning.SetActive(false);
+        }
+
+        if (right.triggerPressed)
+        {
+            if (left.triggerPressed)
+            {
+                unlimitedPower = true;
+                secondSaber.SetActive(true);
+                superForce.SetActive(true);
+                lightning.SetActive(false);
+            }
         }
     }
 
