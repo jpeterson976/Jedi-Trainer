@@ -25,7 +25,7 @@ public class ShootBlaster : MonoBehaviour
 
         counter++;
 
-        if (player.GetComponent<PlayerManager>().canSeeFuture)
+        if (player.GetComponent<PlayerManager>().canSeeFuture && (counter == fireRate - 60))
         {
             // phantom bolt
             GameObject.Instantiate(phantomBolt, this.gameObject.transform.position, this.gameObject.transform.rotation);
