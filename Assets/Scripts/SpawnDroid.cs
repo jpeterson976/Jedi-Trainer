@@ -10,7 +10,7 @@ public class SpawnDroid : MonoBehaviour
     public int rate;
     
     private int counter = 0;
-
+    
     void Start()
     {
         player = GameObject.Find("Player");
@@ -31,8 +31,9 @@ public class SpawnDroid : MonoBehaviour
                 // spawn a new droid, count it, and reset the rate counter for this spawn point
                 GameObject.Instantiate(droid, this.transform.position, this.transform.rotation);
                 camera.GetComponent<DroidTracker>().numberSpawned++;
-                counter = 0;
             }
+
+            counter = 0;
         }
     }
 }

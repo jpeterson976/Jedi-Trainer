@@ -4,40 +4,25 @@ using UnityEngine;
 
 public class DroidDeath : MonoBehaviour
 {
-    SpriteRenderer rend;
+    public GameObject camera;
+
     HealthSystem healthSystem;
     ShootBlaster shootBlaster;
 
-    // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
+        camera = GameObject.Find("Camera (head)");
+
         healthSystem = GetComponent<HealthSystem>();
         shootBlaster = GetComponent<ShootBlaster>();
     }
 
-    IEnumerator FadeOut()
-    {
-        float fade;
-
-        for (fade = 1f; fade >= -0.05f; fade -= 0.05f)
-        {
-            Color c = rend.material.color;
-            c.a = fade;
-            rend.material.color = c;
-            yield return new WaitForSeconds(0.05f);
-        }
-        
-        if (fade <= 0)
-            Destroy(gameObject);
-    }
-
-    public void Update()
+    public void FixedUpdate()
     {
         if (healthSystem.isDead())
         {
-            shootBlaster.fireRate = 100000000;
-            StartCoroutine(FadeOut());
+            camera.GetComponent<DroidTracker>().numberKilled++;
+            Destroy(this.gameObject);
         }
     }
 }

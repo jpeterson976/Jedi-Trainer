@@ -14,24 +14,26 @@ public class BlasterBolt : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("trigger enter happens");
-        Debug.Log(collision.gameObject.name);
         // bolt hits the player
         if (collision.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("hit the player");
             collision.gameObject.GetComponent<HealthSystem>().Damage(damageAmount);
         }
 
         // bolt hits the lightsaber beam
-        if (collision.gameObject.tag.Equals("beam"))
+        if (collision.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("bolt deflected");
             this.gameObject.GetComponent<AudioSource>().clip = deflectedSound;
             this.gameObject.GetComponent<AudioSource>().Play();
 
             // change the direction of the bolt
             transform.Rotate(0, 180.0f, 0);
+        }
+
+        // bolt hits a droid
+        if (collision.gameObject.tag.Equals("Droid"))
+        {
+            collision.gameObject.GetComponent<HealthSystem>().Damage(damageAmount);
         }
     }
 }

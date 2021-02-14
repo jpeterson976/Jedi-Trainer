@@ -45,11 +45,6 @@ public class HealthSystem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Damage(10);
-        }
-
         // leaving this until testing is done - does fade out and disable work? 
         //
         // if (isDead())

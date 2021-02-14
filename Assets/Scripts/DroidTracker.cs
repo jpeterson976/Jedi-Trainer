@@ -13,6 +13,7 @@ public class DroidTracker : MonoBehaviour
     public int target = 30;
     public bool bossSpawned = false;
 
+
     public int numberActive()
     {
         return numberSpawned - numberKilled;
@@ -20,7 +21,7 @@ public class DroidTracker : MonoBehaviour
 
     public bool allSpawned()
     {
-        return numberSpawned == target;
+        return numberSpawned >= target;
     }
 
     void FixedUpdate()
