@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class DroidDeath : MonoBehaviour
 {
-    public GameObject camera;
+    public GameObject player;
 
     HealthSystem healthSystem;
     ShootBlaster shootBlaster;
 
     void Start()
     {
-        camera = GameObject.Find("Camera (head)");
+        player = GameObject.FindWithTag("Player");
 
         healthSystem = GetComponent<HealthSystem>();
         shootBlaster = GetComponent<ShootBlaster>();
@@ -21,7 +21,7 @@ public class DroidDeath : MonoBehaviour
     {
         if (healthSystem.isDead())
         {
-            camera.GetComponent<DroidTracker>().numberKilled++;
+            player.GetComponent<DroidTracker>().numberKilled++;
             Destroy(this.gameObject);
         }
     }

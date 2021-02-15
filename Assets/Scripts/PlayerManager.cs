@@ -17,6 +17,7 @@ public class PlayerManager : MonoBehaviour
 
     public bool canSeeFuture;
     public bool unlimitedPower;
+    public bool hasWon = false;
 
     void Start()
     {
@@ -25,6 +26,9 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
+        if (hasWon)
+            return;
+
         if (unlimitedPower)
         {
             GameObject[] droids = GameObject.FindGameObjectsWithTag("Droid");

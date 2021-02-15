@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DroidTracker : MonoBehaviour
 {
-
+    public PlayerManager player;
     public GameObject bossSpawnPoint;
     public GameObject boss;
     public GameObject winMenu;
 
     public int numberSpawned = 0;
     public int numberKilled = 0;
-    public int target = 30;
+    public int target = 10;
     public bool bossSpawned = false;
+
+    public bool trainingMode;
 
 
     public int numberActive()
@@ -27,6 +29,15 @@ public class DroidTracker : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (trainingMode)
+        {
+            if (numberKilled == 1)
+            {
+                player.hasWon = true;
+                winMenu.SetActive(true);
+            }
+        }
+
         if (!bossSpawned)
         {
             if (numberKilled == target)
@@ -42,6 +53,7 @@ public class DroidTracker : MonoBehaviour
         // signifies the boss has been killed
         if (numberKilled == target + 1)
         {
+            player.hasWon = true;
             winMenu.SetActive(true);
         }
     }

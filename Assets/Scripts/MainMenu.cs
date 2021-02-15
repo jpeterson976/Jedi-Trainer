@@ -7,11 +7,13 @@ public class MainMenu : MonoBehaviour
 {
     public void StartTrainingMode()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
     public void StartBattleMode()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(2);
     }
 

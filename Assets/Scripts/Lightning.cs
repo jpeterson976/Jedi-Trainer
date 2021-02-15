@@ -9,7 +9,10 @@ public class Lightning : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         GameObject droid = other.gameObject;
-        HealthSystem droidHealth = droid.GetComponentInParent<HealthSystem>();
-        droidHealth.Damage(damageRate * Time.deltaTime);
+        if (droid.tag.Equals("Droid"))
+        {
+            HealthSystem droidHealth = droid.GetComponentInParent<HealthSystem>();
+            droidHealth.Damage(damageRate * Time.deltaTime);
+        }
     }
 }

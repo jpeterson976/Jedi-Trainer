@@ -7,6 +7,9 @@ TagManager:
   - Droid
   - Throwable
   - beam
+  - projectile
+  - FxTemporaire
+  - origin
   layers:
   - Default
   - TransparentFX

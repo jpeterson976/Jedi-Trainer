@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4434579490368268524}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -29.69, y: 1.39, z: 6.66}
-  m_LocalScale: {x: 0.1, y: 0.2, z: 0.1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6790406359538727160
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ CapsuleCollider:
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
-  m_Direction: 1
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &567455338548847184
 MonoBehaviour:
@@ -111,7 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 20
   deflectedSound: {fileID: 8300000, guid: e4427f5aec0d2b7489e064e81987b1b9, type: 3}
-  loseMenu: {fileID: 0}
 --- !u!82 &1382370355431584245
 AudioSource:
   m_ObjectHideFlags: 0

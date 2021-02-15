@@ -9,19 +9,20 @@ public class ShootBlaster : MonoBehaviour
     public int fireRate = 100;
 
     private GameObject player;
+    private GameObject target;
     private int counter = 0;
-
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        target = GameObject.Find("Camera (eye)");
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        this.gameObject.transform.LookAt(player.transform);
+        this.gameObject.transform.LookAt(target.transform);
 
         counter++;
 

@@ -5027,7 +5027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c66bd33ee0d3ad41b89823a17e607f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &-8174768881591940136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5041,7 +5041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healRate: 0
-  maxHealth: 50
+  maxHealth: 30
   currentHealth: 0
   healthBar: {fileID: 0}
   loseMenu: {fileID: 0}
